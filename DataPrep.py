@@ -414,7 +414,7 @@ for k,i in df.price.iteritems():
         if is_int(char):
             ans = ans + char
     ans = int(ans)
-    data.ix[k,'price'] = ans      
+    data.ix[k,'price'] = ans 
 
 
 print(data)
