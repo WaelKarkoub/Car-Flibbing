@@ -96,7 +96,7 @@ def parallelScraping(i):
     return (qatarSale, z)
 
 try:
-    with open(ranges, 'wb') as f:
+    with open(ranges, 'rb') as f:
         k = pickle.load(ranges)
         print('file found')
 
@@ -118,7 +118,7 @@ print('reached')
 qatarSale = pd.concat(p)
 
 with open(ranges, 'wb') as f:
-     pickle.dump(z, f)
+    pickle.dump(z, f)
 
 qatarSale.to_csv('scrapedData.csv')
 end = time.time()
