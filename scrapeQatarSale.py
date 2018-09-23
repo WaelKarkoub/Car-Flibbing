@@ -111,9 +111,9 @@ except Exception as e:
 
 num_cores = multiprocessing.cpu_count()
 listData = Parallel(n_jobs=num_cores)(delayed(parallelScraping)(i) for i in listRange)
+
 p = [x[0] for x in listData if not x[0].empty]
 z = [x[1] for x in listData if x[1]>0]
-print('reached')
 
 qatarSale = pd.concat(p)
 
