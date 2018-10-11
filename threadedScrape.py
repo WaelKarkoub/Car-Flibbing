@@ -55,7 +55,7 @@ def scraping(q,result):
         # proxies = np.array(proxies)
         # proxy = np.random.choice(proxies.flatten())
         while True:
-            time.sleep(0.7)
+            time.sleep(0.8)
             try:
                 uClient = uReq(url)
                 pageHTML = uClient.read()
@@ -174,8 +174,8 @@ for i in range(num_theads):
 
 q.join()
 
-p = [x[0] for x in results if not x[0].empty]
-z = [x[1] for x in results if not x[1].empty]
+p = [x[0] for x in results if x[0]]
+z = [x[1] for x in results if x[1]]
 
 qatarSale = pd.concat(p)
 
