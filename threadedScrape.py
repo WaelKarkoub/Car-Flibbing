@@ -174,8 +174,8 @@ for i in range(num_theads):
 
 q.join()
 
-p = [x[0] for x in results if x[0]]
-z = [x[1] for x in results if x[1]]
+p = [x[0] for x in results if x[0] is not None]
+z = [x[1] for x in results if x[1] is not None]
 
 qatarSale = pd.concat(p)
 
